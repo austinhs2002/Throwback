@@ -1,150 +1,155 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Austin's Project - ICQ</title>
-    <link rel="icon" href="icon.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            color: #111;
-        }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Austin's Project - ICQ</title>
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous">
+<style>
+    .jumbotron { 
+        margin-bottom: 2rem; 
+        background-color: #e9ecef; 
+    }
 
-        .hero {
-            background-color: rgb(51,51,51);
-            color: white;
-            padding: 60px 0 30px 0;
-            text-align: center;
-        }
+    .display-4 { 
+        font-size: 4.5rem; 
+        font-weight: 300; 
+        line-height: 1.2; 
+    }
 
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
+    #fun-fact { 
+        cursor: pointer; 
+    }
+    
+    .hamburger-icon { 
+        font-size: 1.5rem; 
+        line-height: 1; 
+        cursor: pointer; 
+    }
 
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            border-bottom: 1px solid black;
-            margin-bottom: 40px;
-            padding-bottom: 0;
-        }
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+        background-color: #93a3b3; 
+    }
 
-        .nav-links a {
-            text-decoration: none;
-            color: #111;
-            font-weight: 500;
-            position: relative;
-            padding-bottom: 2px;
-            transition: all 0.3s ease;
-        }
+    .dropdown-menu .dropdown-item:hover,
+    .dropdown-menu .dropdown-item:focus {
+        background-color: #93a3b3;
+        color: #000;
+    }
+    .dropdown-menu .dropdown-item {
+        position: relative;
+        overflow: hidden;
+    }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -1px;
-            width: 0%;
-            height: 2px;
-            background-color: black;
-            transition: width 0.3s ease;
-        }
+    .dropdown-menu .dropdown-item::after {
+        content: '';
+        position: absolute;
+        left: 24px;
+        bottom: 2px;
+        width: 0;
+        height: 1px;
+        background-color: #5e5e5e;
+        transition: width 0.25s ease-in-out;
+    }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-links a:hover {
-            font-weight: 700;
-        }
-
-        .lead, .content-text {
-            max-width: 800px;
-            margin: 20px auto;
-            font-size: 1.2rem;
-            line-height: 1.7;
-            text-align: center;
-        }
-
-        .banner-card {
-            display: block;
-            max-width: 800px;
-            margin: 30px auto;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .banner-card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
-
-        .fun-fact {
-            color: #555;
-            font-style: italic;
-            text-align: center;
-            margin-top: 25px;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .fun-fact:hover {
-            color: #007bff;
-        }
-
-    </style>
+    .dropdown-menu .dropdown-item:hover::after,
+    .dropdown-menu .dropdown-item:focus::after {
+        width: 72%;
+    }
+</style>
 </head>
 <body>
 
-    <div class="hero">
-        <h1>90s Internet Memorial</h1> <h2>ICQ</h2>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">90's Memorial</a>
+
+    <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+            <a class="nav-link hamburger-icon" href="#" id="hamburgerDropdown" role="button">
+                &#9776;
+            </a>
+            <div class="dropdown-menu" aria-labelledby="hamburgerDropdown">
+                <a class="dropdown-item" href="index.htm">Yahoo</a>
+                <a class="dropdown-item" href="page1.htm">Angelfire</a>
+                <a class="dropdown-item" href="page2.htm">AOL</a>
+                <a class="dropdown-item current" href="page3.htm">ICQ</a>
+                <a class="dropdown-item" href="page4.htm">Netscape Navigator</a>
+            </div>
+        </li>
+    </ul>
+
+    <div class="ml-auto">
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+        </form>
     </div>
+</nav>
 
-    <div class="container py-4">
-        <div class="nav-links">
-            <a href="index.htm">Home</a>
-            <a href="page1.htm">Angelfire</a>
-            <a href="page2.htm">AOL</a>
-            <a class="current">ICQ</a>
-            <a href="page4.htm">Netscape Navigator</a>
-        </div>
-
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">ICQ</h1>
         <p class="lead">
-            ICQ was one of the first instant messaging programs of the Internet era, launched in 1996. It allowed users to send real-time messages, track when friends were online, and organize contacts through unique user numbers.
+            ICQ was one of the first instant messaging programs of the Internet era, launched in 1996. 
+            It allowed users to send real-time messages, track when friends were online, and organize contacts through unique user numbers.
         </p>
-
-        <a href="https://en.wikipedia.org/wiki/ICQ" target="_blank" class="banner-card d-block">
-            <img src="banner4.png" class="img-fluid rounded shadow-sm" alt="ICQ Banner">
-        </a>
-
-        <p class="content-text mt-4">
-            ICQ introduced features like chat rooms, away messages, and notifications for friend logins. It became extremely popular worldwide and influenced nearly all modern chat apps that followed.
-        </p>
-
-        <p class="fun-fact">
-            Click here for a fun ICQ fact! The name “ICQ” sounds like “I seek,” reflecting its original goal of helping users find and connect with friends online.
-        </p>
+        <a class="btn btn-primary btn-lg" href="https://en.wikipedia.org/wiki/ICQ" target="_blank" role="button">Learn more »</a>
     </div>
+</div>
 
-    <script>
-        const funFact = document.querySelector('.fun-fact');
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Features</h2>
+            <p>ICQ introduced features like chat rooms, away messages, and notifications for friend logins.</p>
+            <p><a class="btn btn-secondary" href="https://en.wikipedia.org/wiki/ICQ#Features_of_ICQ_New" role="button" target="_blank">View details »</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Legacy</h2>
+            <p>ICQ became extremely popular worldwide and influenced nearly all modern chat apps that followed.</p>
+            <p><a class="btn btn-secondary" href="https://en.wikipedia.org/wiki/ICQ#History" role="button" target="_blank">More info »</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Fun Fact</h2>
+            <p id="fun-fact">Click here for a fun ICQ fact! The name “ICQ” sounds like “I seek,” reflecting its original goal of helping users find and connect with friends online.</p>
+        </div>
+    </div>
+</main>
 
-        const facts = [
-            "ICQ’s name sounds like 'I seek', reflecting its goal of finding friends online.",
-            "ICQ pioneered away messages and buddy notifications.",
-            "ICQ's user numbers made online contacts easy to manage.",
-            "Many modern messaging features trace their origins to ICQ."
-        ];
+<div class="container text-center my-5">
+    <a href="https://www.icq.com" target="_blank">
+        <img src="banner4.png" class="img-fluid rounded shadow-sm" alt="ICQ Banner">
+    </a>
+</div>
 
-        funFact.addEventListener('click', () => {
-            const randomIndex = Math.floor(Math.random() * facts.length);
-            funFact.textContent = facts[randomIndex];
-        });
-    </script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNaQ41tVrP"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3aR"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+"
+        crossorigin="anonymous"></script>
+
+<script>
+    const funFactEl = document.getElementById('fun-fact');
+    const facts = [
+        "ICQ’s name sounds like 'I seek', reflecting its goal of finding friends online.",
+        "ICQ pioneered away messages and buddy notifications.",
+        "ICQ's user numbers made online contacts easy to manage.",
+        "Many modern messaging features trace their origins to ICQ."
+    ];
+    funFactEl.addEventListener('click', () => {
+        const randomIndex = Math.floor(Math.random() * facts.length);
+        funFactEl.textContent = facts[randomIndex];
+    });
+</script>
+
 </body>
 </html>

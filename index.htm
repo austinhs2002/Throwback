@@ -2,67 +2,153 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Austin's Project</title>
+    <title>Austin's Project - Yahoo Pager</title>
     <link rel="icon" href="icon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: Arial;
+            font-family: Arial, sans-serif;
             background-color: #f0f8ff;
+            color: #111;
         }
-		h1 {
-			text-align: center;
-			margin-left: -15%; 
-		}
-        a {
-            background-color: #dbeaff;
-            border: 1px solid #99bbff;
-            border-radius: 10px;
-            padding: 8px;
+
+        .hero {
+            background-color: rgb(51,51,51);
+            color: white;
+            padding: 60px 0 30px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            border-bottom: 1px solid black;
+            margin-bottom: 40px;
+            padding-bottom: 0;
+        }
+
+        .nav-links a {
             text-decoration: none;
-            margin-right: 5px;
-            display: inline-block;
-            font-weight: bold;
+            color: #111;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
         }
-        a:link {
-            color: blue;
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            width: 0%;
+            height: 2px;
+            background-color: black;
+            transition: width 0.3s ease;
         }
-        a:visited {
-            color: purple;
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
-        a.current {
-            color: black;
-            text-decoration: none;
-            cursor: default;
+
+        .nav-links a:hover {
+            font-weight: 700;
         }
+
+        .lead, .content-text {
+            max-width: 800px;
+            margin: 20px auto;
+            font-size: 1.2rem;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .banner-card {
+            display: block;
+            max-width: 800px;
+            margin: 30px auto;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .banner-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .fun-fact {
+            color: #555;
+            font-style: italic;
+            text-align: center;
+            margin-top: 25px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .fun-fact:hover {
+            color: #007bff;
+        }
+
     </style>
 </head>
 <body>
-<div class="container">
-    <br><br>
-    <h1>Austin's Project</h1>
-    <br>
-    <div class="d-flex align-items-center mb-3" style="margin-left: 23%;">
-		<img src="icon2.png" alt="Logo" style="height:50px; margin-right:10px;">
-        <a class="current">Home</a>
-        <a href="page1.htm">Angelfire</a>
-        <a href="page2.htm">AOL</a>
-        <a href="page3.htm">ICQ</a>
-        <a href="page4.htm">Netscape Navigator</a>
+
+    <div class="hero">
+        <h1>90s Internet Memorial</h1> <h2>Yahoo Pager</h2>
     </div>
-<div class="lead mb-3">
-    Welcome to the 90s Internet Archive! This page is dedicated to Yahoo Pager, one of the early instant messaging services that helped millions stay connected online in the late 1990s.
-</div>
-	<a href="https://en.wikipedia.org/wiki/Yahoo_Messenger#Yahoo!_Pager" style="margin-left: 10%; display:inline-block; background:none; border:none; padding:0;" 
-	target="_blank">
-    	<img src="banner.png" class="img-fluid" alt="Yahoo Pager Banner">
-	</a>
-    <br><br>
-<div class="mb-3">
-    Yahoo Pager allowed users to send real-time messages, create buddy lists, and even participate in group chats, long before social media platforms existed. Its simple interface and fun emoticons made online communication feel personal and lively, laying the foundation for modern chat apps.
-</div>
-<div class="text-muted fst-italic">
-    Fun fact: Yahoo Pager introduced some of the first online emojis, making text conversations more expressive long before mobile messaging apps existed.
-</div>
+
+
+    <div class="container py-4">
+        <div class="nav-links">
+            <a class="current">Home</a>
+            <a href="page1.htm">Angelfire</a>
+            <a href="page2.htm">AOL</a>
+            <a href="page3.htm">ICQ</a>
+            <a href="page4.htm">Netscape Navigator</a>
+        </div>
+
+        <p class="lead">
+            Welcome to my 90s Internet Memorial! This page is dedicated to Yahoo Pager, 
+            one of the early instant messaging services that helped millions stay connected online in the late 1990s.
+        </p>
+
+        <a href="https://en.wikipedia.org/wiki/Yahoo_Messenger#Yahoo!_Pager" target="_blank" class="banner-card d-block">
+            <img src="banner.png" class="img-fluid rounded shadow-sm" alt="Yahoo Pager Banner">
+        </a>
+
+        <p class="content-text mt-4">
+            Yahoo Pager allowed users to send real-time messages, create buddy lists, 
+            and even participate in group chats, long before social media platforms existed. 
+            Its simple interface and fun emoticons made online communication feel personal and lively, laying the foundation for modern chat apps.
+        </p>
+
+        <p class="fun-fact">
+            Click Here to change the fun fact! Yahoo Pager supported group chats, which was rare for the late 1990s.
+        </p>
+    </div>
+
+    <script>
+        const funFact = document.querySelector('.fun-fact');
+
+        const facts = [
+            "Yahoo Pager introduced some of the first online emojis, making chats expressive long before mobile messaging apps existed.",
+            "Yahoo Pager supported group chats, which was rare for the late 1990s.",
+            "Many early internet users discovered instant messaging through Yahoo Pager.",
+            "Yahoo Pager's buddy list design influenced many later chat platforms."
+        ];
+
+        funFact.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            funFact.textContent = facts[randomIndex];
+        });
+    </script>
 </body>
 </html>
